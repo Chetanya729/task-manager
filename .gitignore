@@ -1,0 +1,26 @@
+# Compiled output
+target/
+*.class
+
+# Logs
+*.log
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+.factorypath
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment / secrets
+.env
+application-local.properties
+
+# Maven wrapper exception
+!.mvn/wrapper/maven-wrapper.jar
