@@ -31,12 +31,12 @@ public class TaskService {
     public List<Task> getAllTasks() {
         return taskRepository.findAll();
     }
-    public Task getTaskById(Long id) {
+    public Task getTaskById(String id) {
         return taskRepository.findById(id)
                 .orElseThrow(()-> new TaskNotFoundException(id));
     }
 
-    public Task updateTask(Long id, String title, String description, Status status, Priority priority) {
+    public Task updateTask(String id, String title, String description, Status status, Priority priority) {
         Task task = getTaskById(id);
         if (task != null) task.setTitle(title);
         if (task != null) task.setDescription(description);
@@ -46,7 +46,7 @@ public class TaskService {
         return taskRepository.save(task);
     }
 
-    public void deleteTaskById(Long id) {
+    public void deleteTaskById(String id) {
         if(!taskRepository.existsById(id)){
             throw new TaskNotFoundException(id);
         }

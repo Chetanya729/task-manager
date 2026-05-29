@@ -40,11 +40,11 @@ public class TaskController {
         return ResponseEntity.ok(responses);
     }
     @GetMapping("/{id}")
-    public ResponseEntity<TaskResponse> getTaskById(@PathVariable Long id) {
+    public ResponseEntity<TaskResponse> getTaskById(@PathVariable String id) {
         return ResponseEntity.ok(taskService.toResponse(taskService.getTaskById(id)));
     }
     @PutMapping("/{id}")
-    public ResponseEntity<TaskResponse> updateTask(@Valid @PathVariable Long id, @RequestBody TaskRequest request) {
+    public ResponseEntity<TaskResponse> updateTask(@Valid @PathVariable String id, @RequestBody TaskRequest request) {
         TaskResponse response = taskService.toResponse(
                 taskService.updateTask(id, request.getTitle(), request.getDescription(), request.getStatus(), request.getPriority())
 
@@ -52,7 +52,7 @@ public class TaskController {
                 return ResponseEntity.ok(response);
     }
     @DeleteMapping("/{id}")
-    public ResponseEntity<TaskResponse> deleteTaskById(@PathVariable Long id) {
+    public ResponseEntity<TaskResponse> deleteTaskById(@PathVariable String id) {
         taskService.deleteTaskById(id);
         return ResponseEntity.ok(taskService.toResponse(taskService.getTaskById(id)));
     }

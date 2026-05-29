@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @Data
 @Builder
 public class TaskResponse {
-    private Long id;
+    private String id;
     private String title;
     private String description;
     private Status status;
