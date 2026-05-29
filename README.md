@@ -8,7 +8,7 @@ A clean, layered Spring Boot REST API for managing tasks — built to demonstrat
 - **Framework** : Spring Boot 3.x
 - **Build Tool** : Maven
 - **Utilities** : Lombok, Jakarta Bean Validation
-- **Storage** : In-memory (ConcurrentHashMap) — swappable with any database
+- **Storage** : MongoDB Atlas (cloud-hosted)
 
 ## Features
 
